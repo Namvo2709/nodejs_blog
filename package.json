@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "nodemon --inspect index.js",
+    "watch": "node-sass --watch src/resources/scss/app.scss src/public/css/app.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +25,9 @@
   "homepage": "https://github.com/Namvo2709/nodejs_blog#readme",
   "dependencies": {
     "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "morgan": "^1.10.0",
+    "node-sass": "^9.0.0",
     "nodemon": "^2.0.22"
   }
 }
