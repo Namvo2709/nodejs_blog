@@ -1,12 +1,21 @@
+import Course from "../models/Course.js";
+import { multipleMongooseToObj } from "../../util/mongoose.js";
+
 class SiteController {
   //[GET] /
-  home(req, res) {
-    res.render('home');
+  async home(req, res, next) {
+    try {
+      let courses = multipleMongooseToObj(await Course.find({}));
+      // courses = courses.map((course) => course.toObject());
+      res.render("home", { courses });
+    } catch (error) {
+      next(error);
+    }
   }
 
   // [GET] /search
   search(req, res) {
-    res.render('search');
+    res.render("search");
   }
 }
 
