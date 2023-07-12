@@ -5,15 +5,18 @@ mongoose.plugin(slugGenerator);
 
 const Schema = mongoose.Schema;
 
-const Course = new Schema({
-  name: {type: String , require: true},
-  description: {type: String},
-  image: {type: String},
-  videoId: {type: String},
-  level: {type: String},
-  slug: {type: String, slug: 'name', unique: true},
-}, {
-  timestamps: true,
-});
+const Course = new Schema(
+  {
+    name: { type: String, require: true },
+    description: { type: String },
+    image: { type: String },
+    videoId: { type: String },
+    level: { type: String },
+    slug: { type: String, slug: "name" },
+  },
+  {
+    timestamps: true,
+  }
+);
 
 export default mongoose.model("Course", Course);
