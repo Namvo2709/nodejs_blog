@@ -39,6 +39,7 @@
     "lint-staged": "^13.2.3",
     "method-override": "^3.0.0",
     "mongoose": "^7.3.2",
+    "mongoose-delete": "^1.0.1",
     "mongoose-slug-generator": "^1.0.4",
     "morgan": "^1.10.0",
     "node-sass": "^9.0.0",
