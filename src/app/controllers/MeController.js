@@ -4,8 +4,10 @@ import { multipleMongooseToObj } from "../../util/mongoose.js";
 class MeController {
   // [GET] /stored/courses
   storedCourses(req, res, next) {
+    let courseQuery = Course.find({});
+
     Promise.all([
-      Course.find({}),
+      courseQuery,
       Course.countDocumentsWithDeleted({ deleted: true }),
     ])
       .then(([courses, amoutDeletedRecords]) => {
